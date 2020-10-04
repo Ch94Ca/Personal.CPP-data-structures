@@ -18,7 +18,7 @@ class LinkedListNode
 
         friend class LinkedList;
 
-    protected:
+    public:
 
         LinkedListNode();
         LinkedListNode(int nodeData, LinkedListNode** firstNodePtr);
