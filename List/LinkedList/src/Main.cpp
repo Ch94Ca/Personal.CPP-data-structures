@@ -55,6 +55,8 @@ int main(void){
         cout << "First node ptr: " << list.get_firstNodePtr() << endl;
         cout << "List iterator: " << list.get_listIterator() << endl << endl;
 
+        list.insertNodeAtStart(50);
+        list.insertNodeAtStart(40);
         list.insertNodeAtStart(30);
         list.insertNodeAtStart(20);
         list.insertNodeAtStart(10);
@@ -63,9 +65,12 @@ int main(void){
         cout << "First node ptr: " << list.get_firstNodePtr() << endl;
         cout << "List iterator: " << list.get_listIterator() << endl << endl;
 
-        cout << "node 0 data: " << list.accessNodeData(0) << endl;
-        cout << "node 1 data: " << list.accessNodeData(1) << endl;
-        cout << "node 2 data: " << list.accessNodeData(2) << endl;
+        cout << "Node 0 data: " << list.accessNodeData(0) << endl;
+        cout << "Node 1 data: " << list.accessNodeData(1) << endl;
+        cout << "Node 2 data: " << list.accessNodeData(2) << endl;
+        cout << "Node 3 data: " << list.accessNodeData(3) << endl;
+        cout << "Node 4 data: " << list.accessNodeData(4) << endl;
+
 
         return 0;
 

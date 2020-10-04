@@ -41,11 +41,11 @@ int LinkedList::accessNodeData(int index)
 {   
     LinkedListNode* accessNode = firstNodePtr;
 
-        for(int i = 0; i < index; i++)
-        {   
-            accessNode = accessNode->get_nextNodePtr();
-            
-        } // end for
+    for(int i = 0; i < index; i++)
+    {
+        accessNode = accessNode->get_nextNodePtr();
+
+    } // end for
 
     return accessNode->get_nodeData();
 
@@ -71,7 +71,7 @@ bool LinkedList::insertNodeAtStart(int data)
         node->set_nextNodePtr(nullptr);
 
     }
-    else if(listSize > 1)
+    else if(listSize > 0)
     {
         node->set_nextNodePtr(firstNodePtr);
 
