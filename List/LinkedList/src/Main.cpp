@@ -6,6 +6,7 @@
  */ 
 
 #include <iostream>
+#include "include/LinkedList.hpp"
 #include "include/LinkedListNode.hpp"
 
 using namespace std;
@@ -14,6 +15,8 @@ int main(void){
 
         // LinkedListNode Class test
         // needs to change 'protected' to 'public' in class to work
+
+        /*
 
         LinkedListNode* node;
 
@@ -41,6 +44,28 @@ int main(void){
         cout << "First node ptr:   " << *node->get_firstNodePtr() << endl;
         cout << "Next node ptr:    " << node->get_nextNodePtr() << endl;
         cout << "Current node ptr: " << node << endl << endl;
+
+        */
+
+        // LinkedList Class test
+
+        LinkedList list;
+
+        cout << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl;
+        cout << "List iterator: " << list.get_listIterator() << endl << endl;
+
+        list.insertNodeAtStart(30);
+        list.insertNodeAtStart(20);
+        list.insertNodeAtStart(10);
+
+        cout << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl;
+        cout << "List iterator: " << list.get_listIterator() << endl << endl;
+
+        cout << "node 0 data: " << list.accessNodeData(0) << endl;
+        cout << "node 1 data: " << list.accessNodeData(1) << endl;
+        cout << "node 2 data: " << list.accessNodeData(2) << endl;
 
         return 0;
 
