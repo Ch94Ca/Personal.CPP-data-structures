@@ -89,6 +89,7 @@ int main(void){
         list.insertNodeAt(1, 2);
         list.insertNodeAt(2, 3);
         list.insertNodeAt(3, 4);
+        list.insertNodeAt(4, 5);
 
         list.print();
 
