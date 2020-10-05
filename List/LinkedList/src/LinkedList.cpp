@@ -15,7 +15,6 @@ LinkedList::LinkedList()
 
     firstNodePtr = nullptr;
     listSize = 0;
-    listIterator = 0;
 
 } // end class constructor
 
@@ -25,19 +24,27 @@ int LinkedList::get_listSize()
 
 } // end get_listSize
 
-int LinkedList::get_listIterator()
-{
-    return listIterator;
-
-} // end get_listIterator
-
 LinkedListNode* LinkedList::get_firstNodePtr()
 {
     return firstNodePtr;
 
 } // end get_firstNodePtr
 
-int LinkedList::accessNodeData(int index)
+LinkedListNode* LinkedList::get_NodePtr(int index)
+{
+    LinkedListNode* accessNode = firstNodePtr;
+
+    for(int i = 0; i < index; i++)
+    {
+        accessNode = accessNode->get_nextNodePtr();
+
+    } // end for
+
+    return accessNode;
+
+} // end get_NodePtr
+
+int LinkedList::get(int index)
 {   
     LinkedListNode* accessNode = firstNodePtr;
 
@@ -51,7 +58,7 @@ int LinkedList::accessNodeData(int index)
 
 } // end accessNodeData
 
-bool LinkedList::insertNodeAtStart(int data)
+bool LinkedList::insertFirstNode(int data)
 {
     LinkedListNode* node;
 
@@ -80,7 +87,6 @@ bool LinkedList::insertNodeAtStart(int data)
     firstNodePtr = node;
 
     node->set_firstNodePtr(&firstNodePtr);
-
     node->set_nodeData(data);
 
     listSize++;
@@ -89,13 +95,39 @@ bool LinkedList::insertNodeAtStart(int data)
 
 } // end insertNodeAtStart
 
-bool LinkedList::insertNodeAtEnd(int data)
+bool LinkedList::insertLastNode(int data)
 {
-    return false;
+    LinkedListNode* node;
+
+    try
+    {
+        node = new LinkedListNode;
+
+    }catch(std::bad_alloc&)
+    {            
+        std::cout << "Memory allocaton fail. " << std::endl;
+        return false;
+ 
+    } // end try/catch
+
+    node->set_nextNodePtr(nullptr);
+    node->set_firstNodePtr(&firstNodePtr);
+    node->set_nodeData(data);
+
+    if(listSize > 0)
+    {
+        LinkedListNode* previousLastNode = this->get_NodePtr(listSize - 1);
+        previousLastNode->set_nextNodePtr(node);
+
+    } // end if
+
+    listSize++;
+
+    return true;
 
 } // end insertNodeAtEnd
 
-bool LinkedList::insertNodeAfter(int index, int data)
+bool LinkedList::insertNodeAt(int index, int data)
 {
     return false;
 

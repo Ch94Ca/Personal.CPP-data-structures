@@ -7,7 +7,6 @@
 
 #include "include/LinkedListNode.hpp"
 
-
 LinkedListNode::LinkedListNode()
 {
     nodeData = 0;

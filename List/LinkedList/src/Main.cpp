@@ -52,25 +52,26 @@ int main(void){
         LinkedList list;
 
         cout << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl;
-        cout << "List iterator: " << list.get_listIterator() << endl << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
-        list.insertNodeAtStart(50);
-        list.insertNodeAtStart(40);
-        list.insertNodeAtStart(30);
-        list.insertNodeAtStart(20);
-        list.insertNodeAtStart(10);
+        list.insertFirstNode(30);
+        list.insertFirstNode(20);
+        list.insertFirstNode(10);
 
-        cout << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl;
-        cout << "List iterator: " << list.get_listIterator() << endl << endl;
+        list.insertLastNode(40);
+        list.insertLastNode(50);
+        list.insertLastNode(60);
 
-        cout << "Node 0 data: " << list.accessNodeData(0) << endl;
-        cout << "Node 1 data: " << list.accessNodeData(1) << endl;
-        cout << "Node 2 data: " << list.accessNodeData(2) << endl;
-        cout << "Node 3 data: " << list.accessNodeData(3) << endl;
-        cout << "Node 4 data: " << list.accessNodeData(4) << endl;
+        int listSize = list.get_listSize();
 
+        for(int i = 0; i < listSize; i++)
+        {
+                cout << "Node " << i << " data: " << list.get(i) << endl;
+
+        } // end for
+
+        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
         return 0;
 

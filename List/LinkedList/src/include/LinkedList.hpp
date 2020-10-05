@@ -16,7 +16,6 @@ class LinkedList{
 
         LinkedListNode* firstNodePtr;
         int listSize;
-        int listIterator;
 
         void set_listSize(int listSize);
         void inc_listSize();
@@ -26,15 +25,14 @@ class LinkedList{
         LinkedList();
 
         int get_listSize();
-        int get_listIterator();
         LinkedListNode* get_firstNodePtr();
+        LinkedListNode* get_NodePtr(int index);
 
-        int accessNodeData(int index);
-        bool insertNodeAtStart(int data);
-        bool insertNodeAtEnd(int data);
-        bool insertNodeAfter(int index, int data);
+        int get(int index);
+        bool insertFirstNode(int data);
+        bool insertLastNode(int data);
+        bool insertNodeAt(int index, int data);
         bool deleteNode(int index);
-        
 
 }; // end LinkedList class
 
