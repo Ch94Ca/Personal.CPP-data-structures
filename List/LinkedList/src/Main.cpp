@@ -54,15 +54,34 @@ int main(void){
         cout << "List size: " << list.get_listSize() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
+        list.insertFirstNode(40);
         list.insertFirstNode(30);
         list.insertFirstNode(20);
-        list.insertFirstNode(10);
 
-        list.insertLastNode(40);
-        list.insertLastNode(50);
         list.insertLastNode(60);
+        list.insertLastNode(70);
+        list.insertLastNode(80);
+
+        list.insertNodeAt(0, 10);
+        list.insertNodeAt(4, 50);
+        list.insertNodeAt((list.get_listSize() - 1), 90);
 
         int listSize = list.get_listSize();
+
+        for(int i = 0; i < listSize; i++)
+        {
+                cout << "Node " << i << " data: " << list.get(i) << endl;
+
+        } // end for
+
+        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
+
+        list.deleteNode(4);
+        list.deleteNode(0);
+        list.deleteNode((list.get_listSize() - 1));
+
+        listSize = list.get_listSize();
 
         for(int i = 0; i < listSize; i++)
         {

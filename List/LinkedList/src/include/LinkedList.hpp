@@ -16,9 +16,6 @@ class LinkedList{
 
         LinkedListNode* firstNodePtr;
         int listSize;
-
-        void set_listSize(int listSize);
-        void inc_listSize();
         
     public:
 

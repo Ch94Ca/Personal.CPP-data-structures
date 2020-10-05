@@ -60,11 +60,11 @@ int LinkedList::get(int index)
 
 bool LinkedList::insertFirstNode(int data)
 {
-    LinkedListNode* node;
+    LinkedListNode* newNode;
 
     try
     {
-        node = new LinkedListNode;
+        newNode = new LinkedListNode;
 
     }catch(std::bad_alloc&)
     {            
@@ -75,19 +75,19 @@ bool LinkedList::insertFirstNode(int data)
 
     if(listSize == 0)
     {
-        node->set_nextNodePtr(nullptr);
+        newNode->set_nextNodePtr(nullptr);
 
     }
     else if(listSize > 0)
     {
-        node->set_nextNodePtr(firstNodePtr);
+        newNode->set_nextNodePtr(firstNodePtr);
 
     } // end if/else if
 
-    firstNodePtr = node;
+    firstNodePtr = newNode;
 
-    node->set_firstNodePtr(&firstNodePtr);
-    node->set_nodeData(data);
+    newNode->set_firstNodePtr(&firstNodePtr);
+    newNode->set_nodeData(data);
 
     listSize++;
 
@@ -97,11 +97,11 @@ bool LinkedList::insertFirstNode(int data)
 
 bool LinkedList::insertLastNode(int data)
 {
-    LinkedListNode* node;
+    LinkedListNode* newNode;
 
     try
     {
-        node = new LinkedListNode;
+        newNode = new LinkedListNode;
 
     }catch(std::bad_alloc&)
     {            
@@ -110,14 +110,14 @@ bool LinkedList::insertLastNode(int data)
  
     } // end try/catch
 
-    node->set_nextNodePtr(nullptr);
-    node->set_firstNodePtr(&firstNodePtr);
-    node->set_nodeData(data);
+    newNode->set_nextNodePtr(nullptr);
+    newNode->set_firstNodePtr(&firstNodePtr);
+    newNode->set_nodeData(data);
 
     if(listSize > 0)
     {
         LinkedListNode* previousLastNode = this->get_NodePtr(listSize - 1);
-        previousLastNode->set_nextNodePtr(node);
+        previousLastNode->set_nextNodePtr(newNode);
 
     } // end if
 
@@ -128,25 +128,84 @@ bool LinkedList::insertLastNode(int data)
 } // end insertNodeAtEnd
 
 bool LinkedList::insertNodeAt(int index, int data)
-{
-    return false;
+{   
+    if(index == 0)
+    {
+        bool status = this->insertFirstNode(data);
+        
+        if(status) 
+            return true;
+        else 
+            return false;
+
+    } // end if
+
+    if(index == (listSize - 1))
+    {
+        bool status = this->insertLastNode(data);
+        
+        if(status) 
+            return true;
+        else 
+            return false;
+
+    } // end if
+
+    LinkedListNode* newNode;
+
+    try
+    {
+        newNode = new LinkedListNode;
+
+    }catch(std::bad_alloc&)
+    {            
+        std::cout << "Memory allocaton fail. " << std::endl;
+        return false;
+ 
+    } // end try/catch
+
+    LinkedListNode* previousNode = this->get_NodePtr(index - 1);
+
+    newNode->set_nextNodePtr(previousNode->get_nextNodePtr());
+    previousNode->set_nextNodePtr(newNode);
+
+    newNode->set_firstNodePtr(&firstNodePtr);
+    newNode->set_nodeData(data);
+
+    listSize++;
+
+    return true;
 
 } // end insertNodeAfter
 
 bool LinkedList::deleteNode(int index)
-{
-    return false;
+{   
+    LinkedListNode* deletedNode = this->get_NodePtr(index);
+
+    if(index == 0)
+    {
+        firstNodePtr = deletedNode->get_nextNodePtr();
+
+    } // end if
+
+    else if(index == (listSize - 1))
+    {
+        LinkedListNode* newLastNode = this->get_NodePtr(index - 1);
+        newLastNode->set_nextNodePtr(nullptr);
+
+    } // end else/if
+
+    else
+    {
+        LinkedListNode* previousNode = this->get_NodePtr(index - 1);
+        previousNode->set_nextNodePtr(deletedNode->get_nextNodePtr());
+
+    } // end else
+
+    delete deletedNode;
+
+    listSize--;
+    
+    return true;
 
 } // end deleteNode
-        
-void LinkedList::set_listSize(int listSize)
-{
-    this->listSize = listSize;
-
-} // end set_listSize
-
-void LinkedList::inc_listSize()
-{
-    listSize++;
-
-} // end inc_listSize
