@@ -24,6 +24,16 @@ int LinkedList::get_listSize()
 
 } // end get_listSize
 
+void LinkedList::print()
+{
+    for(int i = 0; i < listSize; i++)
+        {
+                std::cout << "Node " << i << " data: " << this->get(i) << std::endl;
+
+        } // end for
+
+} // end printList
+
 LinkedListNode* LinkedList::get_firstNodePtr()
 {
     return firstNodePtr;
@@ -209,3 +219,17 @@ bool LinkedList::deleteNode(int index)
     return true;
 
 } // end deleteNode
+
+bool LinkedList::deleteList()
+{   
+    int previousListSize = listSize;
+
+    for(int i = 0; i < previousListSize; i++)
+    {
+        this->deleteNode(0);
+
+    } // end for
+
+    return true;
+    
+} // end deleteList

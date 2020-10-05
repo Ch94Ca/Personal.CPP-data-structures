@@ -66,13 +66,7 @@ int main(void){
         list.insertNodeAt(4, 50);
         list.insertNodeAt((list.get_listSize() - 1), 90);
 
-        int listSize = list.get_listSize();
-
-        for(int i = 0; i < listSize; i++)
-        {
-                cout << "Node " << i << " data: " << list.get(i) << endl;
-
-        } // end for
+        list.print();
 
         cout << endl << "List size: " << list.get_listSize() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
@@ -81,13 +75,22 @@ int main(void){
         list.deleteNode(0);
         list.deleteNode((list.get_listSize() - 1));
 
-        listSize = list.get_listSize();
+        list.print();
 
-        for(int i = 0; i < listSize; i++)
-        {
-                cout << "Node " << i << " data: " << list.get(i) << endl;
+        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
+        
+        list.deleteList();
 
-        } // end for
+        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
+
+        list.insertNodeAt(0, 1);
+        list.insertNodeAt(1, 2);
+        list.insertNodeAt(2, 3);
+        list.insertNodeAt(3, 4);
+
+        list.print();
 
         cout << endl << "List size: " << list.get_listSize() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;

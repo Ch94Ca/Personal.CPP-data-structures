@@ -26,10 +26,12 @@ class LinkedList{
         LinkedListNode* get_NodePtr(int index);
 
         int get(int index);
+        void print();
         bool insertFirstNode(int data);
         bool insertLastNode(int data);
         bool insertNodeAt(int index, int data);
         bool deleteNode(int index);
+        bool deleteList();
 
 }; // end LinkedList class
 
