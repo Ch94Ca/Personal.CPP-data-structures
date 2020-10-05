@@ -96,6 +96,7 @@ bool LinkedList::insertFirstNode(int data)
 
     firstNodePtr = newNode;
 
+    newNode->set_firstNodePtr(&firstNodePtr);
     newNode->set_nodeData(data);
 
     listSize++;
@@ -120,6 +121,7 @@ bool LinkedList::insertLastNode(int data)
     } // end try/catch
 
     newNode->set_nextNodePtr(nullptr);
+    newNode->set_firstNodePtr(&firstNodePtr);
     newNode->set_nodeData(data);
 
     if(listSize > 0)
@@ -177,6 +179,7 @@ bool LinkedList::insertNodeAt(int index, int data)
     newNode->set_nextNodePtr(previousNode->get_nextNodePtr());
     previousNode->set_nextNodePtr(newNode);
 
+    newNode->set_firstNodePtr(&firstNodePtr);
     newNode->set_nodeData(data);
 
     listSize++;

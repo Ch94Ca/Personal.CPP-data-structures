@@ -13,7 +13,6 @@ class LinkedListNode
     private:
 
         int nodeData;
-        LinkedListNode** firstNodePtr;
         LinkedListNode* nextNodePtr;
 
         friend class LinkedList;
@@ -21,14 +20,11 @@ class LinkedListNode
     protected:
 
         LinkedListNode();
-        LinkedListNode(int nodeData, LinkedListNode** firstNodePtr);
 
         int get_nodeData();
-        LinkedListNode** get_firstNodePtr();
         LinkedListNode* get_nextNodePtr();
 
         void set_nodeData(int nodeData);
-        void set_firstNodePtr(LinkedListNode** firstNodePtr);
         void set_nextNodePtr(LinkedListNode* nextNodePtr);
 
 }; // end LinkedListNode class
