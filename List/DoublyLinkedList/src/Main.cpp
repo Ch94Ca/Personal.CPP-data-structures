@@ -60,6 +60,11 @@ int main(void){
         list.printListPtr();
         list.print();
 
+        list.deleteList();
+
+        list.printListPtr();
+        list.print();
+
         return 0;
 
 } // End Main
