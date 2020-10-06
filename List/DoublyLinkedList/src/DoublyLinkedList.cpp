@@ -175,12 +175,13 @@ bool DoublyLinkedList::insertFirstNode(int data)
     {
         newNode = new DoublyLinkedListNode;
 
-    }catch(std::bad_alloc&)
+    } // end try
+    catch(std::bad_alloc&)
     {            
         std::cout << "Memory allocation failed. " << std::endl;
         return false;
  
-    } // end try/catch
+    } // end catch
 
     if(listSize > 0)
     {    
@@ -213,12 +214,13 @@ bool DoublyLinkedList::insertLastNode(int data)
     {
         newNode = new DoublyLinkedListNode;
 
-    }catch(std::bad_alloc&)
+    } // end try
+    catch(std::bad_alloc&)
     {            
         std::cout << "Memory allocation failed. " << std::endl;
         return false;
  
-    } // end try/catch
+    } // end catch
 
     newNode->set_nodeData(data);
 
@@ -291,12 +293,13 @@ bool DoublyLinkedList::insertNodeAt(int index, int data)
     {
         newNode = new DoublyLinkedListNode;
 
-    }catch(std::bad_alloc&)
+    } // end try
+    catch(std::bad_alloc&)
     {            
         std::cout << "Memory allocation fail. " << std::endl;
         return false;
  
-    } // end try/catch
+    } // end catch
 
     DoublyLinkedListNode* nextNode = this->get_NodePtr(index);
     DoublyLinkedListNode* previousNode = this->get_NodePtr(index - 1);
@@ -335,7 +338,7 @@ bool DoublyLinkedList::deleteNode(int index)
         nextNode->set_previousNodePtr(nullptr); 
         firstNodePtr = nextNode;
 
-    } // end if
+    } // end else if
 
     else if(index == (listSize - 1))
     {
@@ -343,7 +346,7 @@ bool DoublyLinkedList::deleteNode(int index)
         newLastNode->set_nextNodePtr(nullptr);
         lastNodePtr = newLastNode;
 
-    } // end else/if
+    } // end else if
 
     else
     {
