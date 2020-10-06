@@ -41,7 +41,7 @@ void DoublyLinkedListNode::set_nodeData(int nodeData)
 
 void DoublyLinkedListNode::set_previousNodePtr(DoublyLinkedListNode* previousNodePtr)
 {
-    this->nextNodePtr = previousNodePtr;
+    this->previousNodePtr = previousNodePtr;
 
 } // end set_nextNodePtr
 
