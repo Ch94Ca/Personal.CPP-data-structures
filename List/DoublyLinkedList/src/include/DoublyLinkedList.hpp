@@ -1,7 +1,11 @@
 /*
- *   AUTOR: Carlos Henrique Silva Correia de Araujo
- *   ENGENHARIA DE COMPUTAÇÃO - UFPB
- *   https://github.com/ch94ca
+ *   Author: Carlos Henrique Silva Correia de Araujo
+ *   Computer engineering - UFPB (Undergraduate)
+ *   github.com/Ch94Ca
+ * 
+ *   Description:
+ *      
+ *      Header for the doubly linked list implementation.
  *     
  */ 
 
@@ -10,8 +14,8 @@
 
 #include "DoublyLinkedListNode.hpp"
 
-class DoublyLinkedList{
-
+class DoublyLinkedList
+{
     private:
 
         DoublyLinkedListNode* firstNodePtr;
