@@ -65,6 +65,16 @@ int main(void){
         list.printListPtr();
         list.print();
 
+        for(int i = 0; i < 10; i++)
+        {
+                list.insertLastNode(i);
+
+        } // end for
+        
+        list.printListPtr();
+        list.print();
+        list.printBackward();
+        
         return 0;
 
 } // End Main

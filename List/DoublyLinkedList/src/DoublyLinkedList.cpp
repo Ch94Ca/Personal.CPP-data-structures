@@ -25,16 +25,34 @@ int DoublyLinkedList::get_listSize()
 } // end get_listSize
 
 void DoublyLinkedList::print()
-{
-    for(int i = 0; i < listSize; i++)
-    {
-        std::cout << "Node " << i << " data: " << this->get(i) << std::endl;
-
-    } // end for
+{   
+    DoublyLinkedListNode* accessNode = firstNodePtr;
 
     std::cout << std:: endl;
 
+    for(int i = 0; i < listSize; i++)
+    {
+        std::cout << "Node " << i << " data: " << accessNode->get_nodeData() << std::endl;
+        accessNode = accessNode->get_nextNodePtr();
+
+    } // end for
+
 } // end printList
+
+void DoublyLinkedList::printBackward()
+{
+    DoublyLinkedListNode* accessNode = lastNodePtr;
+    
+    std::cout << std:: endl;
+
+    for(int i = (listSize - 1); i >= 0; i--)
+    {
+        std::cout << "Node " << i << " data: " << accessNode->get_nodeData() << std::endl;
+        accessNode = accessNode->get_previousNodePtr();
+
+    } // end for
+
+} // end printBackwart
 
 void DoublyLinkedList::printListPtr()
 {   
@@ -59,7 +77,7 @@ void DoublyLinkedList::printListPtr()
 
     } // end for
 
-     std::cout << "Last node pointer: " << this->get_lastNodePtr() << std::endl << std:: endl;
+     std::cout << "Last node pointer: " << this->get_lastNodePtr() << std::endl;
 
 } // end printListPtr
 

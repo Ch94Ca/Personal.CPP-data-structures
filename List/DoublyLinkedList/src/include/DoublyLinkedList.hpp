@@ -29,6 +29,7 @@ class DoublyLinkedList{
         int get_listSize();
         int get(int index);
         void print();
+        void printBackward();
         void printListPtr();
         bool insertFirstNode(int data);
         bool insertLastNode(int data);
