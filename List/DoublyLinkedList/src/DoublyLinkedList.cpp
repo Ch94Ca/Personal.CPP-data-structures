@@ -191,6 +191,36 @@ bool DoublyLinkedList::insertNodeAt(int index, int data)
 
     } // end if
 
+    else if(index == listSize)
+    {
+        bool status = this->insertLastNode(data);
+        
+        if(status) 
+            return true;
+        else 
+            return false;
+
+    } // end else/if
+
+    else if(index > listSize)
+    {
+        int newZeroNodes = index - listSize;
+
+        for(int i = 0; i < newZeroNodes; i++)
+        {
+            this->insertLastNode(0);
+
+        } //end for
+
+        bool status = this->insertLastNode(data);
+        
+        if(status) 
+            return true;
+        else 
+            return false;
+
+    } // end else/if
+
     DoublyLinkedListNode* newNode;
 
     try

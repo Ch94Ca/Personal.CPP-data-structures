@@ -54,6 +54,8 @@ int main(void){
         list.insertLastNode(0);
         list.insertLastNode(1);
         list.insertLastNode(2);
+        list.insertNodeAt(3, 3);
+        list.insertNodeAt(10, 10);
 
         list.printListPtr();
         list.print();
