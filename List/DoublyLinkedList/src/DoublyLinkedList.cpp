@@ -77,13 +77,34 @@ DoublyLinkedListNode* DoublyLinkedList::get_lastNodePtr()
 
 DoublyLinkedListNode* DoublyLinkedList::get_NodePtr(int index)
 {
-    DoublyLinkedListNode* accessNode = firstNodePtr;
+    int listMiddle = listSize / 2;
 
-    for(int i = 0; i < index; i++)
+    DoublyLinkedListNode* accessNode;
+
+    if(index <= listMiddle)
     {
-        accessNode = accessNode->get_nextNodePtr();
+        accessNode = firstNodePtr;
 
-    } // end for
+        for(int i = 0; i < index; i++)
+        {
+            accessNode = accessNode->get_nextNodePtr();
+
+        } // end for
+
+    } // end if
+
+    else if(index > listMiddle)
+    {   
+        accessNode = lastNodePtr;
+        int backwardIndex = (listSize - 1) - index;
+
+        for(int i = 0; i < backwardIndex; i++)
+        {
+            accessNode = accessNode->get_previousNodePtr();
+
+        } // end for
+
+    } // end else if
 
     return accessNode;
 
