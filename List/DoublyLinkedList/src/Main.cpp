@@ -14,58 +14,49 @@ int main(void){
 
         DoublyLinkedList list;
 
-        cout << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
-
-        list.insertFirstNode(40);
-        list.insertFirstNode(30);
-        list.insertFirstNode(20);
-
-        list.insertLastNode(60);
-        list.insertLastNode(70);
-        list.insertLastNode(80);
-
-        list.insertNodeAt(0, 10);
-        list.insertNodeAt(4, 50);
-        list.insertNodeAt(5, 55);
-        list.insertNodeAt((list.get_listSize() - 1), 90);
-
+        list.printListPtr();
         list.print();
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
+        list.insertFirstNode(4);
+        list.insertFirstNode(2);
+        list.insertFirstNode(1);
 
-        list.deleteNode(4);
+        list.insertNodeAt(0, 0);
+        list.insertNodeAt(3, 3);
+
+        list.insertLastNode(5);
+        list.insertLastNode(7);
+        list.insertLastNode(8);
+
+        list.insertNodeAt(6, 6);
+
+        list.printListPtr();
+        list.print();
+
+        list.deleteNode(6);     
         list.deleteNode(0);
-        list.deleteNode((list.get_listSize() - 1));
+        list.deleteNode(list.get_listSize() - 1);
 
         list.print();
-
-        cout << endl << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
         
-        //list.deleteList();
+        list.insertNodeAt(5, 6);
+        list.insertNodeAt(0, 0);
+        list.insertLastNode(8);
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
-        cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
+        list.printListPtr();
+        list.print();
 
-        DoublyLinkedList list1;
+        list.deleteList();
 
-        list1.insertLastNode(0);
-        list1.insertLastNode(1);
-        list1.insertLastNode(3);
+        list.printListPtr();
+        list.print();
 
-        list1.printListPtr();
+        list.insertLastNode(0);
+        list.insertLastNode(1);
+        list.insertLastNode(2);
 
-        list1.insertNodeAt(2, 2);
-
-        list1.print();
-
-        list1.printListPtr();
-
-
-        cout << endl << "List size: " << list1.get_listSize() << endl;
-        cout << "First node ptr: " << list1.get_firstNodePtr() << endl << endl;
+        list.printListPtr();
+        list.print();
 
         return 0;
 

@@ -32,6 +32,8 @@ void DoublyLinkedList::print()
 
     } // end for
 
+    std::cout << std:: endl;
+
 } // end printList
 
 void DoublyLinkedList::printListPtr()
@@ -40,19 +42,24 @@ void DoublyLinkedList::printListPtr()
     DoublyLinkedListNode* previousNodePtr;
     DoublyLinkedListNode* nextNodePtr;
 
+    std::cout << std::endl << "List size: " << this->get_listSize() << std::endl;
+    std::cout << "First node pointer: " << this->get_firstNodePtr() << std::endl;
+
     for(int i = 0; i < listSize; i++)
     {   
         currentNodePtr = this->get_NodePtr(i);
         previousNodePtr = currentNodePtr->get_previousNodePtr();
         nextNodePtr = currentNodePtr->get_nextNodePtr();
-
-        std::cout << std::endl << "Node :" << i << std::endl;
+        
+        std::cout << std::endl << "Node: " << i << std::endl;
         std::cout << "Node data: " << this->get(i) << std::endl;
         std::cout << "Previous node pointer: " << previousNodePtr << std::endl;
         std::cout << "Current node pointer : " << currentNodePtr << std::endl;
         std::cout << "Next node pointer    : " << nextNodePtr << std::endl << std::endl;
 
     } // end for
+
+     std::cout << "Last node pointer: " << this->get_lastNodePtr() << std::endl << std:: endl;
 
 } // end printListPtr
 
@@ -217,13 +224,22 @@ bool DoublyLinkedList::insertNodeAt(int index, int data)
 bool DoublyLinkedList::deleteNode(int index)
 {   
     DoublyLinkedListNode* deletedNode = this->get_NodePtr(index);
+    
+    if(listSize == 1)
+    {
+        listSize--;
+        firstNodePtr = nullptr;
+        lastNodePtr = nullptr;
+        return true;
 
-    if(index == 0)
+    } // end if
+
+    else if(index == 0)
     {   
         DoublyLinkedListNode* nextNode = deletedNode->get_nextNodePtr();
 
         nextNode->set_previousNodePtr(nullptr); 
-        firstNodePtr = deletedNode->get_nextNodePtr();
+        firstNodePtr = nextNode;
 
     } // end if
 
@@ -231,6 +247,7 @@ bool DoublyLinkedList::deleteNode(int index)
     {
         DoublyLinkedListNode* newLastNode = this->get_NodePtr(index - 1);
         newLastNode->set_nextNodePtr(nullptr);
+        lastNodePtr = newLastNode;
 
     } // end else/if
 
@@ -261,9 +278,6 @@ bool DoublyLinkedList::deleteList()
         this->deleteNode(0);
 
     } // end for
-
-    firstNodePtr = nullptr;
-    lastNodePtr = nullptr;
 
     return true;
     
