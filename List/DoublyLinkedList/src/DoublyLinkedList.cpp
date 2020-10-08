@@ -325,7 +325,6 @@ void DoublyLinkedList::deleteNode(int index)
     
     if(size == 1)
     {
-        size--;
         firstNodePtr = nullptr;
         lastNodePtr = nullptr;
 
@@ -366,12 +365,20 @@ void DoublyLinkedList::deleteNode(int index)
 
 void DoublyLinkedList::deleteList()
 {   
-    int previoussize = size;
+    DoublyLinkedListNode *accessNode = firstNodePtr;
+    DoublyLinkedListNode *nextNode = firstNodePtr;
 
-    for(int i = 0; i < previoussize; i++)
-    {
-        this->deleteNode(0);
+    for(int i = 0; i < size; i++)
+    {   
+        accessNode = nextNode;
+        nextNode = accessNode->nextNodePtr;
+
+        delete accessNode;
 
     } // end for
-    
+
+    firstNodePtr = nullptr;
+    lastNodePtr = nullptr;
+    size = 0;
+
 } // end deleteList

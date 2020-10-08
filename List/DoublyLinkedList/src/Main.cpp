@@ -74,6 +74,9 @@ int main(void){
         list.printListPtr();
         list.print();
         list.printBackward();
+
+        list.deleteList();
+        list.printListPtr();
         
         return 0;
 
