@@ -1,13 +1,13 @@
 /*
- *   Author: Carlos Henrique Silva Correia de Araujo
- *   Computer engineering - UFPB (Undergraduate)
- *   github.com/Ch94Ca
- * 
- *   Description:
- *      
- *      Doubly linked list node class header 
- *      used in a doubly linked list implementation.
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ *
+ *  Description:
  *     
+ *     Doubly linked list node class header 
+ *     used in a doubly linked list implementation.
+ *    
  */ 
 
 #ifndef DOUBLYLINKEDLISTNODE_HPP
@@ -19,8 +19,8 @@ class DoublyLinkedListNode
 
         int nodeData;
 
-        DoublyLinkedListNode* previousNodePtr;
-        DoublyLinkedListNode* nextNodePtr;
+        DoublyLinkedListNode *previousNodePtr;
+        DoublyLinkedListNode *nextNodePtr;
 
         friend class DoublyLinkedList;
 
@@ -33,8 +33,8 @@ class DoublyLinkedListNode
         DoublyLinkedListNode* get_nextNodePtr();
 
         void set_nodeData(int nodeData);
-        void set_previousNodePtr(DoublyLinkedListNode* previousNodePtr);
-        void set_nextNodePtr(DoublyLinkedListNode* nextNodePtr);
+        void set_previousNodePtr(DoublyLinkedListNode *previousNodePtr);
+        void set_nextNodePtr(DoublyLinkedListNode *nextNodePtr);
 
 }; // end DoublyLinkedListNode class
 

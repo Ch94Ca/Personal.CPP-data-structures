@@ -18,9 +18,9 @@ class DoublyLinkedList
 {
     private:
 
-        DoublyLinkedListNode* firstNodePtr;
-        DoublyLinkedListNode* lastNodePtr;
-        int listSize;
+        DoublyLinkedListNode *firstNodePtr;
+        DoublyLinkedListNode *lastNodePtr;
+        int size;
         
     public:
 
@@ -30,7 +30,7 @@ class DoublyLinkedList
         DoublyLinkedListNode* get_lastNodePtr();
         DoublyLinkedListNode* get_NodePtr(int index);
 
-        int get_listSize();
+        int get_size();
         int get(int index);
         void print();
         void printBackward();

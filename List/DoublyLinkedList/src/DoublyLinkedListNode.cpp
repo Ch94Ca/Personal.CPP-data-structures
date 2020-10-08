@@ -1,12 +1,12 @@
 /*
- *   Author: Carlos Henrique Silva Correia de Araujo
- *   Computer engineering - UFPB (Undergraduate)
- *   github.com/Ch94Ca
- * 
- *   Description:
- *      
- *      Doubly linked list node class implementation
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ *
+ *  Description:
  *     
+ *     Doubly linked list node class implementation
+ *    
  */ 
 
 #include "include/DoublyLinkedListNode.hpp"
@@ -43,13 +43,13 @@ void DoublyLinkedListNode::set_nodeData(int nodeData)
 
 } // end set_nodeData
 
-void DoublyLinkedListNode::set_previousNodePtr(DoublyLinkedListNode* previousNodePtr)
+void DoublyLinkedListNode::set_previousNodePtr(DoublyLinkedListNode *previousNodePtr)
 {
     this->previousNodePtr = previousNodePtr;
 
 } // end set_nextNodePtr
 
-void DoublyLinkedListNode::set_nextNodePtr(DoublyLinkedListNode* nextNodePtr)
+void DoublyLinkedListNode::set_nextNodePtr(DoublyLinkedListNode *nextNodePtr)
 {
     this->nextNodePtr = nextNodePtr;
 

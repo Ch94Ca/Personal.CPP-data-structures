@@ -35,7 +35,7 @@ int main(void){
 
         list.deleteNode(6);     
         list.deleteNode(0);
-        list.deleteNode(list.get_listSize() - 1);
+        list.deleteNode(list.get_size() - 1);
 
         list.print();
         
