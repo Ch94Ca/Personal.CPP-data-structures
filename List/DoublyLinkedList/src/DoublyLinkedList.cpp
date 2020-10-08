@@ -179,7 +179,7 @@ bool DoublyLinkedList::insertFirstNode(int data)
     } // end try
     catch(std::bad_alloc&)
     {            
-        std::cout << "Memory allocation failed. " << std::endl;
+        std::cout << "Memory allocation failure." << std::endl;
         return false;
  
     } // end catch
@@ -218,7 +218,7 @@ bool DoublyLinkedList::insertLastNode(int data)
     } // end try
     catch(std::bad_alloc&)
     {            
-        std::cout << "Memory allocation failed. " << std::endl;
+        std::cout << "Memory allocation failure." << std::endl;
         return false;
  
     } // end catch
