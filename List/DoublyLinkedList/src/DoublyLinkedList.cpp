@@ -318,7 +318,7 @@ bool DoublyLinkedList::insertNodeAt(int index, int data)
 
 } // end insertNodeAfter
 
-bool DoublyLinkedList::deleteNode(int index)
+void DoublyLinkedList::deleteNode(int index)
 {   
     DoublyLinkedListNode* deletedNode = this->get_NodePtr(index);
     
@@ -327,7 +327,6 @@ bool DoublyLinkedList::deleteNode(int index)
         listSize--;
         firstNodePtr = nullptr;
         lastNodePtr = nullptr;
-        return true;
 
     } // end if
 
@@ -361,12 +360,10 @@ bool DoublyLinkedList::deleteNode(int index)
     delete deletedNode;
 
     listSize--;
-    
-    return true;
 
 } // end deleteNode
 
-bool DoublyLinkedList::deleteList()
+void DoublyLinkedList::deleteList()
 {   
     int previousListSize = listSize;
 
@@ -375,7 +372,5 @@ bool DoublyLinkedList::deleteList()
         this->deleteNode(0);
 
     } // end for
-
-    return true;
     
 } // end deleteList
