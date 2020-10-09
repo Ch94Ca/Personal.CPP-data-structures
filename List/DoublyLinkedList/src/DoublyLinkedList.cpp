@@ -317,7 +317,15 @@ bool DoublyLinkedList::insertNodeAt(int index, int data)
 
     return true;
 
-} // end insertNodeAfter
+} // end insertNodeAt
+
+void DoublyLinkedList::updateNode(int index, int data)
+{
+    DoublyLinkedListNode *accessNode = this->get_NodePtr(index);
+
+    accessNode->set_nodeData(data);
+
+} // end updateNode
 
 void DoublyLinkedList::deleteNode(int index)
 {   

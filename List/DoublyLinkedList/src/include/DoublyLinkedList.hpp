@@ -38,6 +38,7 @@ class DoublyLinkedList
         bool insertFirstNode(int data);
         bool insertLastNode(int data);
         bool insertNodeAt(int index, int data);
+        void updateNode(int index, int data);
         void deleteNode(int index);
         void deleteList();
 
