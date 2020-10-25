@@ -51,7 +51,7 @@ int main(void){
 
         LinkedList list;
 
-        cout << "List size: " << list.get_listSize() << endl;
+        cout << "List size: " << list.get_size() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
         list.insertFirstNode(40);
@@ -64,25 +64,25 @@ int main(void){
 
         list.insertNodeAt(0, 10);
         list.insertNodeAt(4, 50);
-        list.insertNodeAt((list.get_listSize() - 1), 90);
+        list.insertNodeAt((list.get_size() - 1), 90);
 
         list.print();
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << endl << "List size: " << list.get_size() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
         list.deleteNode(4);
         list.deleteNode(0);
-        list.deleteNode((list.get_listSize() - 1));
+        list.deleteNode((list.get_size() - 1));
 
         list.print();
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << endl << "List size: " << list.get_size() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
         
         list.deleteList();
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << endl << "List size: " << list.get_size() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
         list.insertNodeAt(0, 1);
@@ -93,7 +93,7 @@ int main(void){
 
         list.print();
 
-        cout << endl << "List size: " << list.get_listSize() << endl;
+        cout << endl << "List size: " << list.get_size() << endl;
         cout << "First node ptr: " << list.get_firstNodePtr() << endl << endl;
 
         return 0;

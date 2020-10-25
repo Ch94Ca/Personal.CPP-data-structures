@@ -14,19 +14,19 @@ LinkedList::LinkedList()
 {
 
     firstNodePtr = nullptr;
-    listSize = 0;
+    size = 0;
 
 } // end class constructor
 
-int LinkedList::get_listSize()
+unsigned int LinkedList::get_size()
 {
-    return listSize;
+    return size;
 
-} // end get_listSize
+} // end get_size
 
 void LinkedList::print()
 {
-    for(int i = 0; i < listSize; i++)
+    for(unsigned int i = 0; i < size; i++)
         {
                 std::cout << "Node " << i << " data: " << this->get(i) << std::endl;
 
@@ -40,11 +40,11 @@ LinkedListNode* LinkedList::get_firstNodePtr()
 
 } // end get_firstNodePtr
 
-LinkedListNode* LinkedList::get_NodePtr(int index)
+LinkedListNode* LinkedList::get_NodePtr(unsigned int index)
 {
     LinkedListNode* accessNode = firstNodePtr;
 
-    for(int i = 0; i < index; i++)
+    for(unsigned int i = 0; i < index; i++)
     {
         accessNode = accessNode->get_nextNodePtr();
 
@@ -54,11 +54,11 @@ LinkedListNode* LinkedList::get_NodePtr(int index)
 
 } // end get_NodePtr
 
-int LinkedList::get(int index)
+int LinkedList::get(unsigned int index)
 {   
     LinkedListNode* accessNode = firstNodePtr;
 
-    for(int i = 0; i < index; i++)
+    for(unsigned int i = 0; i < index; i++)
     {
         accessNode = accessNode->get_nextNodePtr();
 
@@ -68,7 +68,7 @@ int LinkedList::get(int index)
 
 } // end accessNodeData
 
-bool LinkedList::insertFirstNode(int data)
+void LinkedList::insertFirstNode(int data)
 {
     LinkedListNode* newNode;
 
@@ -78,17 +78,17 @@ bool LinkedList::insertFirstNode(int data)
 
     }catch(std::bad_alloc&)
     {            
-        std::cout << "Memory allocaton fail. " << std::endl;
-        return false;
+        std::cout << "Memory allocation failure." << std::endl;
+        exit(1);
  
     } // end try/catch
 
-    if(listSize == 0)
+    if(size == 0)
     {
         newNode->set_nextNodePtr(nullptr);
 
     }
-    else if(listSize > 0)
+    else if(size > 0)
     {
         newNode->set_nextNodePtr(firstNodePtr);
 
@@ -98,13 +98,11 @@ bool LinkedList::insertFirstNode(int data)
 
     newNode->set_nodeData(data);
 
-    listSize++;
-
-    return true;
+    size++;
 
 } // end insertNodeAtStart
 
-bool LinkedList::insertLastNode(int data)
+void LinkedList::insertLastNode(int data)
 {
     LinkedListNode* newNode;
 
@@ -114,48 +112,38 @@ bool LinkedList::insertLastNode(int data)
 
     }catch(std::bad_alloc&)
     {            
-        std::cout << "Memory allocaton fail. " << std::endl;
-        return false;
+        std::cout << "Memory allocation failure." << std::endl;
+        exit(1);
  
     } // end try/catch
 
     newNode->set_nextNodePtr(nullptr);
     newNode->set_nodeData(data);
 
-    if(listSize > 0)
+    if(size > 0)
     {
-        LinkedListNode* previousLastNode = this->get_NodePtr(listSize - 1);
+        LinkedListNode* previousLastNode = this->get_NodePtr(size - 1);
         previousLastNode->set_nextNodePtr(newNode);
 
     } // end if
 
-    listSize++;
-
-    return true;
+    size++;
 
 } // end insertNodeAtEnd
 
-bool LinkedList::insertNodeAt(int index, int data)
+void LinkedList::insertNodeAt(unsigned int index, int data)
 {   
     if(index == 0)
     {
-        bool status = this->insertFirstNode(data);
-        
-        if(status) 
-            return true;
-        else 
-            return false;
+        this->insertFirstNode(data);
+        return;
 
     } // end if
 
-    if(index == (listSize - 1))
+    if(index == (size - 1))
     {
-        bool status = this->insertLastNode(data);
-        
-        if(status) 
-            return true;
-        else 
-            return false;
+        this->insertLastNode(data);
+        return;
 
     } // end if
 
@@ -167,8 +155,8 @@ bool LinkedList::insertNodeAt(int index, int data)
 
     }catch(std::bad_alloc&)
     {            
-        std::cout << "Memory allocaton fail. " << std::endl;
-        return false;
+        std::cout << "Memory allocation failure." << std::endl;
+        exit(1);
  
     } // end try/catch
 
@@ -179,13 +167,19 @@ bool LinkedList::insertNodeAt(int index, int data)
 
     newNode->set_nodeData(data);
 
-    listSize++;
+    size++;
 
-    return true;
+} // end insertNodeAt
 
-} // end insertNodeAfter
+void LinkedList::modifyNodeData(unsigned int index, int data)
+{
+    LinkedListNode *accessNode = this->get_NodePtr(index);
 
-bool LinkedList::deleteNode(int index)
+    accessNode->set_nodeData(data);
+
+} // end modifyNodeData
+
+void LinkedList::deleteNode(unsigned int index)
 {   
     LinkedListNode* deletedNode = this->get_NodePtr(index);
 
@@ -195,7 +189,7 @@ bool LinkedList::deleteNode(int index)
 
     } // end if
 
-    else if(index == (listSize - 1))
+    else if(index == (size - 1))
     {
         LinkedListNode* newLastNode = this->get_NodePtr(index - 1);
         newLastNode->set_nextNodePtr(nullptr);
@@ -211,22 +205,25 @@ bool LinkedList::deleteNode(int index)
 
     delete deletedNode;
 
-    listSize--;
-    
-    return true;
+    size--;
 
 } // end deleteNode
 
-bool LinkedList::deleteList()
-{   
-    int previousListSize = listSize;
+void LinkedList::deleteList()
+{
+    LinkedListNode *accessNode = firstNodePtr;
+    LinkedListNode *nextNode = firstNodePtr;
 
-    for(int i = 0; i < previousListSize; i++)
+    for (unsigned int i = 0; i < size; i++)
     {
-        this->deleteNode(0);
+        accessNode = nextNode;
+        nextNode = accessNode->nextNodePtr;
+
+        delete accessNode;
 
     } // end for
 
-    return true;
-    
+    firstNodePtr = nullptr;
+    size = 0;
+
 } // end deleteList

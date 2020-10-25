@@ -14,24 +14,25 @@ class LinkedList{
 
     private:
 
-        LinkedListNode* firstNodePtr;
-        int listSize;
+        LinkedListNode *firstNodePtr;
+        unsigned int size;
         
     public:
 
         LinkedList();
 
-        int get_listSize();
+        unsigned int get_size();
         LinkedListNode* get_firstNodePtr();
-        LinkedListNode* get_NodePtr(int index);
+        LinkedListNode* get_NodePtr(unsigned int index);
 
-        int get(int index);
+        int get(unsigned int index);
         void print();
-        bool insertFirstNode(int data);
-        bool insertLastNode(int data);
-        bool insertNodeAt(int index, int data);
-        bool deleteNode(int index);
-        bool deleteList();
+        void insertFirstNode(int data);
+        void insertLastNode(int data);
+        void insertNodeAt(unsigned int index, int data);
+        void modifyNodeData(unsigned int index, int data);
+        void deleteNode(unsigned int index);
+        void deleteList();
 
 }; // end LinkedList class
 

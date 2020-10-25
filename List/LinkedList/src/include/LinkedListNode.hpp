@@ -13,7 +13,7 @@ class LinkedListNode
     private:
 
         int nodeData;
-        LinkedListNode* nextNodePtr;
+        LinkedListNode *nextNodePtr;
 
         friend class LinkedList;
 
@@ -25,7 +25,7 @@ class LinkedListNode
         LinkedListNode* get_nextNodePtr();
 
         void set_nodeData(int nodeData);
-        void set_nextNodePtr(LinkedListNode* nextNodePtr);
+        void set_nextNodePtr(LinkedListNode *nextNodePtr);
 
 }; // end LinkedListNode class
 
