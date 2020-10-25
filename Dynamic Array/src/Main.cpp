@@ -49,9 +49,18 @@ int main(void)
         array.print();
 
         array.deleteElement(5);
+        array.deleteElement(0);
+        array.deleteElement(array.getSize());
         array.print();
 
         array.deleteArray();
+        array.print();
+
+        array.insertFirst(10);
+        array.print();
+
+        array.deleteArray();
+        array.insertLast(10);
         array.print();
 
         return 0;

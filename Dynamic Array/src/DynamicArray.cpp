@@ -125,7 +125,14 @@ void DynamicArray::modifyElement(unsigned int index, int data)
 } // end modifyElement
 
 void DynamicArray::deleteElement(unsigned int index)
-{
+{   
+    if(size == 1)
+    {
+        this->deleteArray();
+        return;
+
+    } // end if
+
     for(unsigned int i = index; i < size; i++)
     {
         array[i] = array[i + 1];
