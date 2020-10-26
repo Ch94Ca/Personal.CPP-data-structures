@@ -46,6 +46,12 @@ void DynamicArray::resize(unsigned int newSize)
 
     } // end if
 
+    for(unsigned int i = size; i < newSize; i++)
+    {
+        array[i] = 0;
+
+    } // end for
+
     size = newSize;
 
 } // end resize
@@ -60,7 +66,7 @@ unsigned int DynamicArray::get_size()
 {
     return size;
 
-} // end getSize
+} // end get_size
 
 void DynamicArray::print()
 {
@@ -105,16 +111,36 @@ void DynamicArray::insertLast(int data)
 } // end insert data
 
 void DynamicArray::insertAt(unsigned int index, int data)
-{
-    this->resize(size + 1);
-
-    for(unsigned int i = (size - 1); i > index; i--)
+{   
+    if(index < size)
     {
-        array[i] = array [i - 1];
+        this->resize(size + 1);
+
+        for(unsigned int i = (size - 1); i > index; i--)
+        {
+            array[i] = array [i - 1];
+
+        } // end if
+        
+
+        array[index] = data;
+    
+    } // end if
+    else
+    {
+        unsigned int previousSize = size;
+
+        this->resize(index + 1);
+
+        for(unsigned int i = previousSize; i < size; i++)
+        {
+            array[i] = 0;
+
+        } // end for
+
+        array[index] = data;
 
     } // end if
-    
-    array[index] = data;
 
 } // end insertAt
 

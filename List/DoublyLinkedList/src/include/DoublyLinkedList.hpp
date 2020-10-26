@@ -70,6 +70,7 @@ class DoublyLinkedList
         DoublyLinkedListNode *firstNodePtr;
         DoublyLinkedListNode *lastNodePtr;
         unsigned int size;
+        
     public:
 
         DoublyLinkedList();
@@ -90,7 +91,6 @@ class DoublyLinkedList
         void modifyNodeData(unsigned int index, int data);
         void deleteNode(unsigned int index);
         void deleteList();
-
 
 }; // end DoublyLinkedList class
 
