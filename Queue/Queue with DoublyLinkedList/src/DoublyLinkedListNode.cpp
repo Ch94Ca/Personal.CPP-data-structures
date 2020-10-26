@@ -1,0 +1,81 @@
+/*
+ *  Doubly Linked List Node
+ * 
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ *  
+ *  Started In: Oct 3, 2020
+ *  Last modification: Oct 11, 2020 
+ * 
+ *  Description:
+ *     
+ *     Doubly linked list node implementation.
+ * 
+ *     Supported operations:
+ *      
+ *      - set_nodeData:
+ *          set node data
+ * 
+ *      - set_previousNodePtr:
+ *          set previous node pointer
+ * 
+ *      - set_nextNodePtr:
+ *          set next node pointer
+ * 
+ *      - get_nodeData:
+ *          get node data
+ * 
+ *      - get_previousNodePtr:
+ *          get previous node pointer
+ * 
+ *      - get_nextNodePtr:
+ *          get next node pointer
+ * 
+ */
+
+#include "include/DoublyLinkedListNode.hpp"
+
+DoublyLinkedListNode::DoublyLinkedListNode()
+{
+    nodeData = 0;
+    previousNodePtr = nullptr;
+    nextNodePtr = nullptr;
+
+} // end class constructor
+
+int DoublyLinkedListNode::get_nodeData()
+{
+    return nodeData;
+
+} // end get_nodeData
+
+DoublyLinkedListNode *DoublyLinkedListNode::get_previousNodePtr()
+{
+    return previousNodePtr;
+
+} // end get_nextNodePtr
+
+DoublyLinkedListNode *DoublyLinkedListNode::get_nextNodePtr()
+{
+    return nextNodePtr;
+
+} // end get_nextNodePtr
+
+void DoublyLinkedListNode::set_nodeData(int nodeData)
+{
+    this->nodeData = nodeData;
+
+} // end set_nodeData
+
+void DoublyLinkedListNode::set_previousNodePtr(DoublyLinkedListNode *previousNodePtr)
+{
+    this->previousNodePtr = previousNodePtr;
+
+} // end set_nextNodePtr
+
+void DoublyLinkedListNode::set_nextNodePtr(DoublyLinkedListNode *nextNodePtr)
+{
+    this->nextNodePtr = nextNodePtr;
+
+} // end set_nextNodePtr
