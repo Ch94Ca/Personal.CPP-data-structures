@@ -22,37 +22,61 @@ DynamicArray::DynamicArray()
 
 DynamicArray::DynamicArray(unsigned int size)
 {
-    array = (int*) malloc(sizeof(int) * size);
-
-    if(array == NULL)
+    try
     {
-        std::cout << "Memory Allocation Failed" << std::endl;
+        array = new int[size];
+
+    } // end try
+    catch (std::bad_alloc &)
+    {
+        std::cout << "Memory allocation failure." << std::endl;
         exit(1);
 
-    } // end if
+    } // end catch
 
     this->size = size;
 
-} // end class constructor
-
-void DynamicArray::resize(unsigned int newSize)
-{
-    array = (int*) realloc(array, sizeof(int) * newSize);
-
-    if(array == NULL)
-    {
-        std::cout << "Memory Re-allocation Failed" << std::endl;
-        exit(1);
-
-    } // end if
-
-    for(unsigned int i = size; i < newSize; i++)
+    for(unsigned int i = 0; i < size; i++)
     {
         array[i] = 0;
 
     } // end for
 
-    size = newSize;
+} // end class constructor
+
+void DynamicArray::resize(unsigned int newSize)
+{   
+    int *tempArray;
+    
+    try
+    {
+        tempArray = new int[newSize];
+
+    } // end try
+    catch (std::bad_alloc &)
+    {
+        std::cout << "Memory allocation failure." << std::endl;
+        exit(1);
+
+    } // end catch
+
+    for(unsigned int i = 0; i < size; i++)
+    {
+        tempArray[i] = array[i];
+
+    } // end for
+
+    for(unsigned int i = size; i < newSize; i++)
+    {
+        tempArray[i] = 0;
+
+    } // end for
+
+    this->size = newSize;
+
+    delete(array);
+
+    array = tempArray;
 
 } // end resize
 
@@ -171,7 +195,7 @@ void DynamicArray::deleteElement(unsigned int index)
 
 void DynamicArray::deleteArray()
 {
-    free(array);
+    delete(array);
     array = nullptr;
     size = 0;
 

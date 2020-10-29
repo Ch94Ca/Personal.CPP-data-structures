@@ -16,55 +16,39 @@ using namespace std;
 
 int main(void)
 {
-        DynamicArray array(10);
+        DynamicArray array;
 
         cout << "Array Size: " << array.get_size() << endl;
 
-        for(unsigned int i = 0; i < array.get_size(); i++)
+        array.print();
+
+        for(unsigned int i = 0; i < 10; i++)
         {
-                array.modifyElement(i, i);
+                array.insertLast(i + 1);
 
-        }
-
-        array.print();
-
-        array.insertLast(99);
-        array.insertFirst(99);
-        array.insertAt(5, 99);
+        }  // end for
 
         array.print();
+        cout << "Array Size: " << array.get_size() << endl;
 
-        for(unsigned int i = 0; i < array.get_size(); i++)
-        {
-                array.modifyElement(i, i+1);
+        array.resize(15);
+        array.print();
+        cout << "Array Size: " << array.get_size() << endl;
+        
+        array.resize(5);
+        array.print();
+        cout << "Array Size: " << array.get_size() << endl;
 
-        } // end for
+        array.deleteElement(1);
+        array.deleteElement(2);
+        array.deleteElement(3);
 
         array.print();
-
-        array.resize(10);
-        array.print();
-
-        array.insertAt(5, 99);
-        array.print();
-
-        array.deleteElement(5);
-        array.deleteElement(0);
-        array.deleteElement(array.get_size());
-        array.print();
+        cout << "Array Size: " << array.get_size() << endl;
 
         array.deleteArray();
         array.print();
-
-        array.insertFirst(10);
-        array.print();
-
-        array.deleteArray();
-        array.insertLast(10);
-        array.print();
-
-        array.insertAt(15, 99);
-        array.print();
+        cout << "Array Size: " << array.get_size() << endl;
 
         return 0;
 
