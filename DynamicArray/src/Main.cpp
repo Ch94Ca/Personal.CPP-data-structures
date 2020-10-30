@@ -33,22 +33,21 @@ int main(void)
 
         array.resize(15);
         array.print();
-        cout << "Array Size: " << array.get_size() << endl;
-        
-        array.resize(5);
-        array.print();
-        cout << "Array Size: " << array.get_size() << endl;
 
-        array.deleteElement(1);
-        array.deleteElement(2);
-        array.deleteElement(3);
+        array.deleteElement(0);
+        array.deleteElement(0);
+        array.deleteElement(0);
 
         array.print();
-        cout << "Array Size: " << array.get_size() << endl;
+
+        array.insertFirst(3);
+        array.insertFirst(2);
+        array.insertFirst(1);
+
+        array.print();
 
         array.deleteArray();
         array.print();
-        cout << "Array Size: " << array.get_size() << endl;
 
         return 0;
 

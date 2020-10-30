@@ -60,23 +60,44 @@ void DynamicArray::resize(unsigned int newSize)
 
     } // end catch
 
-    for(unsigned int i = 0; i < size; i++)
+    for(unsigned int i = 0; i < newSize; i++)
     {
-        tempArray[i] = array[i];
+        if(i < size)
+        {
+            tempArray[i] = array[i];
+
+        } // end if
+        else
+        {
+            tempArray[i] = 0;
+
+        } // end else
+        
+    } // end for
+
+    delete[] array;
+
+    try
+    {
+        array = new int[newSize];
+
+    } // end try
+    catch (std::bad_alloc &)
+    {
+        std::cout << "Memory allocation failure." << std::endl;
+        exit(1);
+
+    } // end catch
+
+    for(unsigned int i = 0; i < newSize; i++)
+    {
+        array[i] = tempArray[i];
 
     } // end for
 
-    for(unsigned int i = size; i < newSize; i++)
-    {
-        tempArray[i] = 0;
+    size = newSize;
 
-    } // end for
-
-    this->size = newSize;
-
-    delete(array);
-
-    array = tempArray;
+    delete[] tempArray;
 
 } // end resize
 
@@ -195,7 +216,7 @@ void DynamicArray::deleteElement(unsigned int index)
 
 void DynamicArray::deleteArray()
 {
-    delete(array);
+    delete[] array;
     array = nullptr;
     size = 0;
 
