@@ -8,3 +8,5 @@ exe: $(obj)
 clean:
 	rm -rf *o exe
 	rm -rf src/*.o
+lines:
+	git ls-files | xargs wc -l
