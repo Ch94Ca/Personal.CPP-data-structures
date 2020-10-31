@@ -36,9 +36,11 @@ unsigned int HashMap::get_nextPrime(unsigned int start)
 
         for(unsigned int i = 2; i <= sqrt(primeNumber); i++) {
 
-                if(primeNumber % i == 0) {
-                        c++;
-                        break;
+                if(primeNumber % i == 0)
+                {
+                    c++;
+                    break;
+
                 } // end If
 
         } // end for
@@ -68,9 +70,11 @@ unsigned int HashMap::get_previousPrime(unsigned int start)
 
         for(unsigned int i = 2; i <= sqrt(primeNumber); i++) {
 
-                if(primeNumber % i == 0) {
-                        c++;
-                        break;
+                if(primeNumber % i == 0) 
+                {
+                    c++;
+                    break;
+
                 } // end If
 
         } // end for
@@ -196,7 +200,7 @@ void HashMap::insert(std::string name, unsigned long int cpf)
         } // end if
         else if(indexData.cpf == cpf)
         {
-            std::cout << "CPF Já Cadastrado." << std::endl;
+            std::cout << "CPF Já Cadastrado." << std::endl << std::endl;
             return;
 
         } // end if
@@ -305,6 +309,14 @@ void HashMap::deleteElement(unsigned long int key)
     } // end if
 
 } // end deleteElement
+
+void HashMap::deleteHashMap()
+{
+    array.deleteArray();
+    tableSize = 0;
+    tableOccupation = 0;
+
+} // deleteHashMap
 
 void HashMap::printArray()
 {

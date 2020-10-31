@@ -40,6 +40,7 @@ class HashMap
         arrayData get(unsigned long int key);
         unsigned int get_index(unsigned long int key);
         void deleteElement(unsigned long int key);
+        void deleteHashMap();
         void printArray();
         void printKey(unsigned long int key);
         void print();

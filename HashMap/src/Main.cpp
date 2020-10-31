@@ -83,6 +83,38 @@ int main(void)
 
         hash.printStatus();
 
+        cout << "- Inserindo novos elementos no HashMap..." << endl << endl;
+
+        hash.insert("Mozart", 24611491005);
+        hash.insert("Bach", 19257906060);
+        hash.insert("Beethoven", 57882266000);
+        hash.insert("Debussy", 42746116049);
+        hash.insert("Paganini", 48704013042);
+        hash.insert("Chopin", 18187258004);
+        hash.insert("Villa-Lobos", 64252080070);
+        hash.insert("Liszt", 73133247077);
+
+        cout << "- imprimindo todos os elementos válidos no HashMap: " << endl << endl;
+        
+        hash.print();
+
+        cout << "- Status do HashMap após a remoção: " << endl << endl;
+
+        hash.printStatus();
+
+        cout << "- Tentando inserir elementos já existentes no HashMap: " << endl << endl;
+
+        hash.insert("Villa-Lobos", 64252080070);
+        hash.insert("Liszt", 73133247077);
+
+        cout << "- Excluindo o HashMap..." << endl << endl;
+
+        hash.deleteHashMap();
+
+        cout << "- Status do HashMap após a remoção: " << endl << endl;
+
+        hash.printStatus();
+
         return 0;
 
 } // End Main
