@@ -5,24 +5,30 @@
  *
  *  Description:
  *     
- *     DynamicArray class implementation
+ *     HashMap class implementation
  *    
  */ 
 
 #include "include/HashMap.hpp"
-#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <cmath>
 
-unsigned int HashMap::doubleHash(unsigned long int key, unsigned int attempt)
+unsigned int HashMap::firstEmpty(unsigned long int key, unsigned int attempt)
 {
     unsigned int size = array.get_size();
 
-    unsigned int hash_0 = key % size;
-    unsigned int hash_1 = (size - 1) - key % (size - 1);
+    unsigned int hash = key % size;
 
-    return (hash_0 + attempt * hash_1) % size; 
+    unsigned int index = hash + attempt;
+
+    if(index >= size)
+    {
+        index = index - size;
+
+    } // end if
+
+    return index;
 
 } // end hash_0
 
@@ -188,7 +194,7 @@ void HashMap::insert(std::string name, unsigned long int cpf)
 
     while(true)
     {   
-        insertIndex = doubleHash(cpf, attempt);
+        insertIndex = firstEmpty(cpf, attempt);
         
         arrayData indexData = array.get(insertIndex);
 
@@ -232,7 +238,7 @@ arrayData HashMap::get(unsigned long int key)
 
     while(true)
     {   
-        searchIndex = doubleHash(key, attempt);
+        searchIndex = firstEmpty(key, attempt);
         
         indexData = array.get(searchIndex);
 
@@ -270,7 +276,7 @@ void HashMap::deleteElement(unsigned long int key)
 
     while(true)
     {   
-        deleteIndex = doubleHash(key, attempt);
+        deleteIndex = firstEmpty(key, attempt);
         
         indexData = array.get(deleteIndex);
 

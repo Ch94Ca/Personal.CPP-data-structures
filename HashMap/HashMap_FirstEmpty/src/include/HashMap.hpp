@@ -5,7 +5,7 @@
  *
  *  Description:
  *     
- *     DynamicArray class implementation
+ *     HashMap class implementation
  *    
  */ 
 
@@ -22,7 +22,7 @@ class HashMap
         unsigned int tableSize;
         double tableOccupation;
 
-        unsigned int doubleHash(unsigned long int key, unsigned int attempt);
+        unsigned int firstEmpty(unsigned long int key, unsigned int attempt);
 
         unsigned int get_nextPrime(unsigned int start);
         unsigned int get_previousPrime(unsigned int start);
@@ -38,7 +38,6 @@ class HashMap
 
         void insert(std::string name, unsigned long int cpf);
         arrayData get(unsigned long int key);
-        unsigned int get_index(unsigned long int key);
         void deleteElement(unsigned long int key);
         void deleteHashMap();
         void printArray();
