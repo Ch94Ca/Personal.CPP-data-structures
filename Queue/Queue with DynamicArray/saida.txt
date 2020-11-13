@@ -1,0 +1,44 @@
+- Fila criada...
+
+- A fila está vazia? 1
+
+- Enfileirando valores na fila...
+
+- A fila está vazia? 0
+
+- Tamanho da fila: 6
+
+- Imprimindo a fila: 
+
+Fim da fila -> 32 | 22 | 3 | 2 | 12 | 5 -> Início da fila
+
+- Desenfileirando valores: 
+
+Desenfileirar: 5
+Desenfileirar: 12
+Desenfileirar: 2
+
+- Tamanho da fila: 3
+
+- Imprimindo a fila: 
+
+Fim da fila -> 32 | 22 | 3 -> Início da fila
+
+- Acessando valores do início da fila sem remove-los: 
+
+Início da fila: 3
+
+- Tamanho da fila: 3
+
+- Imprimindo a fila: 
+
+Fim da fila -> 32 | 22 | 3 -> Início da fila
+
+- Apagando toda a fila...
+
+- Tamanho da fila: 0
+
+- Imprimindo a fila: 
+
+Fim da fila ->  -> Início da fila
+

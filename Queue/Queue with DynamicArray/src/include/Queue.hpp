@@ -1,9 +1,38 @@
 /*
- *   AUTOR: Carlos Henrique Silva Correia de Araujo
- *   ENGENHARIA DE COMPUTAÇÃO - UFPB
- *   https://github.com/ch94ca
+ *  Queue
+ * 
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ * 
+ *  Description:
  *     
- */ 
+ *    Queue implementation using DynamicArray.
+ * 
+ *     Supported operations:
+ *      
+ *      - get_size:
+ *          return stack size
+ *
+ *      - enqueue:
+ *          enqueue (insert) element in the end of the queue
+ *
+ *      - dequeue:
+ *          dequeue (return and remove) the element at queue start
+ *
+ *      - peek:
+ *          peek (return only) element in queue start
+ *
+ *      - isEmpty:
+ *          return true if queue is empty and false if not
+ *
+ *      - deleteQueue:
+ *          delete entire queue
+ *
+ *      - print:
+ *          print all elements in the queue
+ *
+ */
 
 #ifndef STACK_HPP
 #define STACK_HPP
@@ -27,7 +56,7 @@ class Queue
         int dequeue();
         int peek();
         bool isEmpty();
-        void emptyQueue();
+        void deleteQueue();
 
         void print();
 

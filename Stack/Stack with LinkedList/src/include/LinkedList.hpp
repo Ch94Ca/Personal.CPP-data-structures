@@ -1,9 +1,50 @@
 /*
- *   AUTOR: Carlos Henrique Silva Correia de Araujo
- *   ENGENHARIA DE COMPUTAÇÃO - UFPB
- *   https://github.com/ch94ca
+ *  Linked List
+ * 
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ * 
+ *  Description:
  *     
- */ 
+ *     linked list implementation.
+ * 
+ *     Supported operations:
+ *      
+ *      - get_FirstNodePtr:
+ *          return first node pointer
+ * 
+ *      - get_NodePtr:
+ *          return node pointer by index 
+ * 
+ *      - get_size: 
+ *          return list size
+ * 
+ *      - get: 
+ *          return list content by index
+ * 
+ *      - print:
+ *          print list data in forward order
+ *  
+ *      - insertFirstNode:
+ *          insert node at list start
+ * 
+ *      - insertLastNode:
+ *          insert node at list end
+ * 
+ *      - insertNodeAt:
+ *          insert node in the middle list by index
+ * 
+ *       - modifyNodeData:
+ *          modify node value by index
+ *
+ *      - deleteNode:
+ *          delete list node by index
+ * 
+ *      - deleteList:
+ *          delete entire list
+ * 
+ */
 
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP

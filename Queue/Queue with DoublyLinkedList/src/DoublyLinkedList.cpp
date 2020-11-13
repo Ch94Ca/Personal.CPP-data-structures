@@ -4,9 +4,6 @@
  *  Author: Carlos Henrique Silva Correia de Araujo
  *  Computer engineering - UFPB (Undergraduate)
  *  github.com/Ch94Ca
- *  
- *  Started In: Oct 3, 2020
- *  Last modification: Oct 11, 2020 
  * 
  *  Description:
  *     

@@ -1,0 +1,46 @@
+- Pilha criada...
+
+- A pilha está vazia? 1
+
+- Empilhando valores na pilha...
+
+- A pilha está vazia? 0
+
+- Tamanho da pilha: 4
+
+- Imprimindo a pilha: 
+
+3
+4
+12
+2
+
+- Desempilhando valores: 
+
+Desempilhar: 3
+Desempilhar: 4
+
+- Tamanho da pilha: 2
+
+- Imprimindo a pilha: 
+
+12
+2
+
+- Acessando valores do topo sem remove-los: 
+
+Topo: 12
+
+- Tamanho da pilha: 2
+
+- Imprimindo a pilha: 
+
+12
+2
+
+- Apagando toda a pilha...
+
+- Tamanho da pilha: 0
+
+- Imprimindo a pilha: 
+

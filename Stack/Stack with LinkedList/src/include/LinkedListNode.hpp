@@ -1,9 +1,30 @@
 /*
- *   AUTOR: Carlos Henrique Silva Correia de Araujo
- *   ENGENHARIA DE COMPUTAÇÃO - UFPB
- *   https://github.com/ch94ca
+ *  Linked List Node
+ * 
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ *  
+ * 
+ *  Description:
  *     
- */ 
+ *     Linked list node implementation.
+ * 
+ *     Supported operations:
+ *      
+ *      - set_nodeData:
+ *          set node data
+ * 
+ *      - set_previousNodePtr:
+ *          set previous node pointer
+ * 
+ *      - get_nodeData:
+ *          get node data
+ * 
+ *      - get_previousNodePtr:
+ *          get previous node pointer
+ * 
+ */
 
 #ifndef LINKEDLISTNODE_HPP
 #define LINKEDLISTNODE_HPP

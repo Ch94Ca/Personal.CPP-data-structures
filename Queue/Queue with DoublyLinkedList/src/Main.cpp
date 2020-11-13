@@ -1,9 +1,15 @@
 /*
- *   AUTOR: Carlos Henrique Silva Correia de Araujo
- *   ENGENHARIA DE COMPUTAÇÃO - UFPB
- *   https://github.com/ch94ca
+ *  Queue with DoublyLinkedList test Code
+ * 
+ *  Author: Carlos Henrique Silva Correia de Araujo
+ *  Computer engineering - UFPB (Undergraduate)
+ *  github.com/Ch94Ca
+ * 
+ *  Description:
  *     
- */ 
+ *     Queue with DoublyLinkedList test Code
+ * 
+ */
 
 #include <iostream>
 #include "include/Queue.hpp"
@@ -14,7 +20,9 @@ int main(void){
 
         Queue queue;
 
-        cout << "Queue is empty? " << queue.isEmpty() << endl;
+        cout << "- Fila criada..." << endl << endl;
+        cout << "- A fila está vazia? " << queue.isEmpty() << endl << endl;
+        cout << "- Enfileirando valores na fila..." << endl << endl;
         
         queue.enqueue(5);
         queue.enqueue(12);
@@ -23,21 +31,35 @@ int main(void){
         queue.enqueue(22);
         queue.enqueue(32);
 
-        cout << "Queue is empty? " << queue.isEmpty() << endl;
-
+        cout << "- A fila está vazia? " << queue.isEmpty() << endl << endl;
+        cout << "- Tamanho da fila: " << queue.get_size() << endl << endl;
+        cout << "- Imprimindo a fila: " << endl << endl;
         queue.print();
 
-        cout << "Dequeue: " << queue.dequeue() << endl;
-        cout << "Dequeue: " << queue.dequeue() << endl;
-        cout << "Dequeue: " << queue.dequeue() << endl;
+        cout << "- Desenfileirando valores: " << endl << endl;
 
+        cout << "Desenfileirar: " << queue.dequeue() << endl;
+        cout << "Desenfileirar: " << queue.dequeue() << endl;
+        cout << "Desenfileirar: " << queue.dequeue() << endl << endl;
+
+        cout << "- Tamanho da fila: " << queue.get_size() << endl << endl;
+        cout << "- Imprimindo a fila: " << endl << endl;
         queue.print();
 
-        queue.emptyQueue();
+        cout << "- Acessando valores do início da fila sem remove-los: " << endl << endl;
 
+        cout << "Início da fila: " << queue.peek() << endl << endl;
+
+        cout << "- Tamanho da fila: " << queue.get_size() << endl << endl;
+        cout << "- Imprimindo a fila: " << endl << endl;
         queue.print();
-        
-        cout << "Queue is empty? " << queue.isEmpty() << endl;
+
+        cout << "- Apagando toda a fila..." << endl << endl;
+        queue.deleteQueue();
+
+        cout << "- Tamanho da fila: " << queue.get_size() << endl << endl;
+        cout << "- Imprimindo a fila: " << endl << endl;
+        queue.print();
 
         return 0;
 

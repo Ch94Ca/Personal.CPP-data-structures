@@ -1,13 +1,15 @@
 /*
+ *  HashMap test code
+ * 
  *  Author: Carlos Henrique Silva Correia de Araujo
  *  Computer engineering - UFPB (Undergraduate)
  *  github.com/Ch94Ca
- *
+ * 
  *  Description:
  *     
- *     Doubly linked list class implementation
- *    
- */ 
+ *     HashMap test code
+ * 
+ */
 
 #include <iostream>
 #include "include/HashMap.hpp"

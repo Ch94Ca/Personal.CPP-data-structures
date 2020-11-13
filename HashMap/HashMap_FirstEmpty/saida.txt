@@ -1,0 +1,149 @@
+- HashMap vazio, status: 
+
+Tamanho do array do HashMap: 3
+Número de itens armazenados: 0
+Taxa de ocupação (%): 0
+
+- inserindo alguns elementos no HashMap...
+
+- imprimindo todos os elementos no array do HashMap: 
+
+Array #0 data:
+Name: joão
+CPF: 58979635095
+
+Array #1 data:
+Name: 
+CPF: 0
+
+Array #2 data:
+Name: José
+CPF: 17841339062
+
+- Status do HashMap após a inserção: 
+
+Tamanho do array do HashMap: 3
+Número de itens armazenados: 2
+Taxa de ocupação (%): 66.6667
+
+- Inserindo mais elementos no HashMap...
+
+- imprimindo todos os elementos válidos no HashMap: 
+
+Nome: José
+CPF: 17841339062
+
+Nome: joão
+CPF: 58979635095
+
+Nome: Maria
+CPF: 96569359002
+
+Nome: Lúcia
+CPF: 22893731090
+
+- Status do HashMap após a inserção: 
+
+Tamanho do array do HashMap: 7
+Número de itens armazenados: 4
+Taxa de ocupação (%): 57.1429
+
+- Buscando elementos no HashMap a partir da chave: 
+
+Nome: joão
+CPF: 58979635095
+
+Nome: Maria
+CPF: 96569359002
+
+- Buscando um elemento que não existe no HashMap
+
+Nome: NULL
+CPF: 0
+
+- Removendo dois elementos do HashMap...
+
+- imprimindo todos os elementos válidos no HashMap: 
+
+Nome: joão
+CPF: 58979635095
+
+Nome: Maria
+CPF: 96569359002
+
+- Status do HashMap após a remoção: 
+
+Tamanho do array do HashMap: 3
+Número de itens armazenados: 2
+Taxa de ocupação (%): 66.6667
+
+- Removendo os dois últimos elementos do HashMap...
+
+- imprimindo todos os elementos no array do HashMap: 
+
+Array #0 data:
+Name: 
+CPF: 0
+
+Array #1 data:
+Name: 
+CPF: 0
+
+Array #2 data:
+Name: 
+CPF: 0
+
+- Status do HashMap após a remoção: 
+
+Tamanho do array do HashMap: 3
+Número de itens armazenados: 0
+Taxa de ocupação (%): 0
+
+- Inserindo novos elementos no HashMap...
+
+- imprimindo todos os elementos válidos no HashMap: 
+
+Nome: Liszt
+CPF: 73133247077
+
+Nome: Mozart
+CPF: 24611491005
+
+Nome: Paganini
+CPF: 48704013042
+
+Nome: Chopin
+CPF: 18187258004
+
+Nome: Villa-Lobos
+CPF: 64252080070
+
+Nome: Bach
+CPF: 19257906060
+
+Nome: Beethoven
+CPF: 57882266000
+
+Nome: Debussy
+CPF: 42746116049
+
+- Status do HashMap após a remoção: 
+
+Tamanho do array do HashMap: 11
+Número de itens armazenados: 8
+Taxa de ocupação (%): 72.7273
+
+- Tentando inserir elementos já existentes no HashMap: 
+
+CPF Já Cadastrado.
+
+CPF Já Cadastrado.
+
+- Excluindo o HashMap...
+
+- Status do HashMap após a remoção: 
+
+Tamanho do array do HashMap: 0
+Número de itens armazenados: 0
+Taxa de ocupação (%): 0
+
